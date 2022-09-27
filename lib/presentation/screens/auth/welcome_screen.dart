@@ -10,7 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+// import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import '/new_code/di.dart';
 import '/presentation/bloc/auth/new_code/welcome_screen_cubit.dart';
 import '/presentation/colors.dart';
@@ -193,39 +193,39 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 SizedBox(
                   height: 28,
                 ),
-                (Platform.isAndroid)
-                    ? SizedBox(
-                        width:
-                            MediaQuery.of(context).size.width, // <-- Your width
-                        height: 45, // <-- Your height
-                        child: ElevatedButton.icon(
-                          icon: IconButton(
-                            icon:
-                                SvgPicture.asset("assets/images/ic_google.svg"),
-                            onPressed: () {},
-                          ),
-                          onPressed: () => context
-                              .read<WelcomeScreenCubit>()
-                              .socialSignInPressed(SocialProvider.google),
-                          style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(10), // <-- Radius
-                              ),
-                              primary: Colors.black),
-                          label: Text("Войти через Google".tr(),
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  //fontFamily: 'GloryRegular',
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 17)),
-                        ),
-                      )
-                    : SignInWithAppleButton(
-                        onPressed: () => context
-                            .read<WelcomeScreenCubit>()
-                            .socialSignInPressed(SocialProvider.apple),
-                      ),
+                // (Platform.isAndroid)
+                //     ? SizedBox(
+                //         width:
+                //             MediaQuery.of(context).size.width, // <-- Your width
+                //         height: 45, // <-- Your height
+                //         child: ElevatedButton.icon(
+                //           icon: IconButton(
+                //             icon:
+                //                 SvgPicture.asset("assets/images/ic_google.svg"),
+                //             onPressed: () {},
+                //           ),
+                //           onPressed: () => context
+                //               .read<WelcomeScreenCubit>()
+                //               .socialSignInPressed(SocialProvider.google),
+                //           style: ElevatedButton.styleFrom(
+                //               shape: RoundedRectangleBorder(
+                //                 borderRadius:
+                //                     BorderRadius.circular(10), // <-- Radius
+                //               ),
+                //               primary: Colors.black),
+                //           label: Text("Войти через Google".tr(),
+                //               style: TextStyle(
+                //                   color: Colors.white,
+                //                   //fontFamily: 'GloryRegular',
+                //                   fontWeight: FontWeight.w500,
+                //                   fontSize: 17)),
+                //         ),
+                //       )
+                //     : SignInWithAppleButton(
+                //         onPressed: () => context
+                //             .read<WelcomeScreenCubit>()
+                //             .socialSignInPressed(SocialProvider.apple),
+                //       ),
                 SizedBox(
                   height: 46,
                 ),

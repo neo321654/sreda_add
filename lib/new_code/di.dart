@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -72,9 +72,9 @@ Future<void> newDi() async {
 
   final baseOptionsGetter = newBaseOptionsGetter(getAuthToken);
   final authTokenStorer = newAuthTokenStorer(sp);
-  final googleTokenGetter = newGoogleTokenGetter(GoogleSignIn(scopes: ["email"]));
+  // final googleTokenGetter = newGoogleTokenGetter(GoogleSignIn(scopes: ["email"]));
   final googleBackendTokenGetter = newBackendGoogleAuthenticator(dio);
-  final googleAuthenticator = newSocialAuthenticator(googleTokenGetter, googleBackendTokenGetter, authTokenStorer);
+  // final googleAuthenticator = newSocialAuthenticator(googleTokenGetter, googleBackendTokenGetter, authTokenStorer);
   final appleTokenGetter = newAppleTokenGetter();
   final appleBackendTokenGetter = newBackendAppleAuthenticator(dio);
   final appleAuthenticator = newSocialAuthenticator(appleTokenGetter, appleBackendTokenGetter, authTokenStorer);
@@ -82,14 +82,14 @@ Future<void> newDi() async {
   final checkContact = newBoughtContactChecker(newAPIBoughtContactChecker(dio, baseOptionsGetter));
   final handlePurchase = newPurchaseHandler(dio, baseOptionsGetter);
 
-  uiDeps = UIDeps(
-    authGateCubitFactory,
-    tariffsCubitFactory,
-    googleAuthenticator,
-    appleAuthenticator,
-    getContacts,
-    checkContact,
-    handlePurchase,
-    dio,
-  );
+  // uiDeps = UIDeps(
+  //   authGateCubitFactory,
+  //   tariffsCubitFactory,
+  //   googleAuthenticator,
+  //   appleAuthenticator,
+  //   getContacts,
+  //   checkContact,
+  //   handlePurchase,
+  //   dio,
+  // );
 }
