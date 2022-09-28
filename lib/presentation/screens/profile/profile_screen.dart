@@ -19,7 +19,7 @@ import '/presentation/screens/profile/show_profile_model_screen.dart';
 import '/presentation/screens/profile/widget/profile_card.dart';
 import '/presentation/screens/registration/registration_employer_screen.dart';
 import '/presentation/widgets/submit_button.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+// import 'package:url_launcher/url_launcher_string.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
@@ -189,7 +189,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   GestureDetector(
                     onTap: () async {
-                      await launchUrlString('mailto:Sredamodels@gmail.com');
+                      // await launchUrlString('mailto:Sredamodels@gmail.com');
                     },
                     child: ItemProfileMenu(
                       iconPath: "assets/images/icons_profile/ic_mail.svg",
